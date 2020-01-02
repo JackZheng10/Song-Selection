@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
 //Reducer
-//Evaluates an action, if needed, and returns updated data
+//Evaluates an action, if needed, and returns updated or original data
 const songsListR = () => {
   return [
     { title: "Paris in the Rain", duration: "3:25" },
@@ -18,3 +18,8 @@ const selectedSongR = (selectedSong = null, action) => {
 
   return selectedSong;
 };
+
+export default combineReducers({
+  songs: songsListR,
+  selectedSong: selectedSongR
+});
